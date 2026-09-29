@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus Events – Catalog &amp; Registration</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23e53935' d='M16 28s-13-8.4-13-17A7 7 0 0 1 16 7a7 7 0 0 1 13 4c0 8.6-13 17-13 17Z'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to main content</a>
+
+    <header>
+        <div class="wrap">
+            <h1>Campus Events</h1>
+            <p>Find what's on and save your seat.</p>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#register">Register</a></li>
+                    <li><a href="#my-registrations">My Registrations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <figure class="hero">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDYwMCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgc2xpY2UiIHhtbG5zOmMycGE9Imh0dHA6Ly9jMnBhLm9yZy9tYW5pZmVzdCI+PG1ldGFkYXRhPjxjMnBhOm1hbmlmZXN0PkFBQVdnbXAxYldJQUFBQWVhblZ0WkdNeWNHRUFFUUFRZ0FBQXFnQTRtM0VEWXpKd1lRQUFBQlpjYW5WdFlnQUFBRWRxZFcxa1l6SnRZUUFSQUJDQUFBQ3FBRGliY1FOMWNtNDZZekp3WVRvek5UY3pOelExTmkweFlUVXhMVFJtTmpndFlqbG1OQzB5TlRJelpUQXhaRGRpWXpBQUFBQURsMnAxYldJQUFBQXBhblZ0WkdNeVlYTUFFUUFRZ0FBQXFnQTRtM0VEWXpKd1lTNWhjM05sY25ScGIyNXpBQUFBQUx4cWRXMWlBQUFBUkdwMWJXUmpZbTl5QUJFQUVJQUFBS29BT0p0eEUyTXljR0V1YVc1bmNtVmthV1Z1ZEM1Mk13QUFBQUFZWXpKemFFcTZuVEYrbmRxcmE1RWR5ZytETDhVQUFBQndZMkp2Y3FOcFpHTTZabTl5YldGMGJXbHRZV2RsTDNOMlp5dDRiV3hxYVc1emRHRnVZMlZKUkhnc2VHMXdPbWxwWkRvMU9XRXhOVEl5TkMwek16SXhMVFJqTm1ZdE9UUTJOaTA1WkdNMk1HUmlPR0prTkdGc2NtVnNZWFJwYjI1emFHbHdhSEJoY21WdWRFOW1BQUFCNG1wMWJXSUFBQUJCYW5WdFpHTmliM0lBRVFBUWdBQUFxZ0E0bTNFVFl6SndZUzVoWTNScGIyNXpMbll5QUFBQUFCaGpNbk5vc3FVSWo2RzRGc0JBdEZsNXZHQkJXQUFBQVpsalltOXlvbWRoWTNScGIyNXpncUptWVdOMGFXOXVhMk15Y0dFdWIzQmxibVZrYW5CaGNtRnRaWFJsY25PaGEybHVaM0psWkdsbGJuUnpnYUpqZFhKc2VDMXpaV3htSTJwMWJXSm1QV015Y0dFdVlYTnpaWEowYVc5dWN5OWpNbkJoTG1sdVozSmxaR2xsYm5RdWRqTmthR0Z6YUZnZ2dIOE5SQjN0WVR3K0p1aXZYWm9ieHE1eStpblhXeEdXV29QWUVBajRGRnFrWm1GamRHbHZibmdkWTI5dExtRnVkR2h5YjNCcFl5NWpiR0YxWkdVdWNISnZkbWxrWldScWNHRnlZVzFsZEdWeWM2RjRIMk52YlM1aGJuUm9jbTl3YVdNdWIzSnBaMmx1TFdOdmJtWnBaR1Z1WTJWbmRXNXJibTkzYm10a1pYTmpjbWx3ZEdsdmJuaG1RMnhoZFdSbElIQnliM1pwWkdWa0lIUm9hWE1nWm1sc1pTQmhkQ0IwYUdVZ2NtVnhkV1Z6ZENCdlppQmhJSFZ6WlhJZ1lXNWtJRzFoZVNCb1lYWmxJR055WldGMFpXUWdiM0lnYlc5a2FXWnBaV1FnZEdobElHWnBiR1VnWTI5dWRHVnVkSE11YlhOdlpuUjNZWEpsUVdkbGJuU2haRzVoYldWbVEyeGhkV1JsY21Gc2JFRmpkR2x2Ym5OSmJtTnNkV1JsWlBVQUFBRElhblZ0WWdBQUFFQnFkVzFrWTJKdmNnQVJBQkNBQUFDcUFEaWJjUk5qTW5CaExtaGhjMmd1WkdGMFlRQUFBQUFZWXpKemFQaThGM3g2UFZVNUtCS1dyWUNGamdrQUFBQ0FZMkp2Y3FWallXeG5abk5vWVRJMU5tTndZV1JOQUFBQUFBQUFBQUFBQUFBQUFHUm9ZWE5vV0NDdUlJV2tsWDhka2Zhcm5NME1GdEVpc0lLMU9mYlh0eTh0S2RKVWtBQkJCbVJ1WVcxbGJtcDFiV0ptSUcxaGJtbG1aWE4wYW1WNFkyeDFjMmx2Ym5PQm9tVnpkR0Z5ZEJpalpteGxibWQwYUJrZUJBQUFBajVxZFcxaUFBQUFKMnAxYldSak1tTnNBQkVBRUlBQUFLb0FPSnR4QTJNeWNHRXVZMnhoYVcwdWRqSUFBQUFDRDJOaWIzS2xZMkZzWjJaemFHRXlOVFpwYzJsbmJtRjBkWEpsZUUxelpXeG1JMnAxYldKbVBTOWpNbkJoTDNWeWJqcGpNbkJoT2pNMU56TTNORFUyTFRGaE5URXROR1kyT0MxaU9XWTBMVEkxTWpObE1ERmtOMkpqTUM5ak1uQmhMbk5wWjI1aGRIVnlaV3BwYm5OMFlXNWpaVWxFZUN4NGJYQTZhV2xrT2pGbE5qbGhZVEJqTFdObU1EUXROR0l6WXkxaE1ETTRMVEUzT1RFNVl6TXdNakF4WkhKamNtVmhkR1ZrWDJGemMyVnlkR2x2Ym5PRG9tTjFjbXg0TFhObGJHWWphblZ0WW1ZOVl6SndZUzVoYzNObGNuUnBiMjV6TDJNeWNHRXVhVzVuY21Wa2FXVnVkQzUyTTJSb1lYTm9XQ0NBZncxRUhlMWhQRDRtNks5ZG1odkdybkw2S2RkYkVaWmFnOWdRQ1BnVVdxSmpkWEpzZUNwelpXeG1JMnAxYldKbVBXTXljR0V1WVhOelpYSjBhVzl1Y3k5ak1uQmhMbUZqZEdsdmJuTXVkakprYUdGemFGZ2dBcTV3NWh0RWNvTHhSamNaMXBqWUJZQ2hHZU10Z25iNDl0SCtXUi9BcXh1aVkzVnliSGdwYzJWc1ppTnFkVzFpWmoxak1uQmhMbUZ6YzJWeWRHbHZibk12WXpKd1lTNW9ZWE5vTG1SaGRHRmthR0Z6YUZnZ3BROGtPSEVUYkdheVBvZFV1UEZOVzZSYkR1NEVReFRwTFdVKzZyUzZhUWwwWTJ4aGFXMWZaMlZ1WlhKaGRHOXlYMmx1Wm0ralpHNWhiV1Z2UVc1MGFISnZjR2xqSUVacGJHVnpaM1psY25OcGIyNWxNUzR3TGpCcmMzQmxZMVpsY25OcGIyNWxNaTQwTGpBQUFCQTRhblZ0WWdBQUFDaHFkVzFrWXpKamN3QVJBQkNBQUFDcUFEaWJjUU5qTW5CaExuTnBaMjVoZEhWeVpRQUFBQkFJWTJKdmN0S0VXUUlTb2dFbUdDRlpBZ293Z2dJR01JSUJqYUFEQWdFQ0FoUkE1YUFLN3NJNTBMNjRnL29HUWdVOVoxVVRBREFLQmdncWhrak9QUVFEQXpCSk1SY3dGUVlEVlFRS0V3NUJiblJvY205d2FXTXNJRkJDUXpFdU1Dd0dBMVVFQXhNbFFXNTBhSEp2Y0dsaklFTnZiblJsYm5RZ1EzSmxaR1Z1ZEdsaGJITWdVbTl2ZENCRFFUQWVGdzB5TmpBNE1EY3hPRFF6TlRaYUZ3MHlPREE0TURZeE9UUXpOVFphTUVReEZ6QVZCZ05WQkFvVERrRnVkR2h5YjNCcFl5d2dVRUpETVNrd0p3WURWUVFERXlCQmJuUm9jbTl3YVdNZ1EyeGhkV1JsSUVOdmJuUmxiblFnVTJsbmJtbHVaekJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCSmg2Q212TFVCZ0ZGTlUwdlVLbE9WdEU2ZGpkMTdMNVN1d1gwTGVtRmlzQk0zZGtkLzNjeWp4RkEzUW81UzQ2ZlgwL2loWTBWWjdtZmI5S0Y3MDN0NU9qV0RCV01BNEdBMVVkRHdFQi93UUVBd0lIZ0RBVkJnTlZIU1VFRGpBTUJnb3JCZ0VFQVlQb1hnSUJNQXdHQTFVZEV3RUIvd1FDTUFBd0h3WURWUjBqQkJnd0ZvQVV6bEhpQklGT1pGc2orT1BFejVvK25NSFhYTUl3Q2dZSUtvWkl6ajBFQXdNRFp3QXdaQUl3TVhNZEZKNEJldExMVlk3T1J1RTlub3FiYkFaT1puL2FBclh5VHdGQVpmS3JQenhGMnZQb0pOZjErVUNkZzFYR0FqQndYMXpkOVdHcVlrcW1MNVNGcXcxUXlTanIxekpmcEpNOSsxcmREd1NQTE1PUE9qS3VpWGpvVS9wVVVlRzlSd21oWTNCaFpGa05uZ0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVBaWVFGSml3bldrdUlMSS9pRnR1WndHSG0raEl0OS83M3U2SmhieU5KdzlEYTRicmJ0YXFkK2YyTnhxU2RvcVlMaDhvbWJNanJBMi9PR1lWUkR6SHBEZC9VQT08L2MycGE6bWFuaWZlc3Q+PC9tZXRhZGF0YT4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJza3kiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlOWI4YzIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZGYzZjUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI3NreSkiLz4KPGNpcmNsZSBjeD0iMTI4MCIgY3k9IjE0MCIgcj0iOTAiIGZpbGw9IiNmZmQxNjYiLz4KPGNpcmNsZSBjeD0iMTI4MCIgY3k9IjE0MCIgcj0iMTMwIiBmaWxsPSIjZmZkMTY2IiBvcGFjaXR5PSIuMjUiLz4KPHBhdGggZD0iTTAgMzMwIFE0MDAgMjcwIDgwMCAzMjAgVDE2MDAgMzAwIFY2MDAgSDBaIiBmaWxsPSIjYzk5MDlkIiBvcGFjaXR5PSIuNSIvPgo8IS0tIG1haW4gaGFsbCAtLT4KPHJlY3QgeD0iNDcwIiB5PSIzMDAiIHdpZHRoPSI2NjAiIGhlaWdodD0iMjMwIiBmaWxsPSIjZjdlOWVjIi8+Cjxwb2x5Z29uIHBvaW50cz0iNDQwLDMwMCA4MDAsMTcwIDExNjAsMzAwIiBmaWxsPSIjODAwMDIwIi8+Cjxwb2x5Z29uIHBvaW50cz0iNTQwLDI5MCA4MDAsMjAwIDEwNjAsMjkwIiBmaWxsPSIjNWMwMDE3Ii8+CjxjaXJjbGUgY3g9IjgwMCIgY3k9IjI2MiIgcj0iMjIiIGZpbGw9IiNmZmQxNjYiLz4KPHJlY3QgeD0iNDQwIiB5PSIyOTYiIHdpZHRoPSI3MjAiIGhlaWdodD0iMTgiIGZpbGw9IiMzYjBkMWEiLz4KPGcgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjYzk5MDlkIiBzdHJva2Utd2lkdGg9IjMiPgo8cmVjdCB4PSI1MDAiIHk9IjMxNCIgd2lkdGg9IjM0IiBoZWlnaHQ9IjIwMCIvPjxyZWN0IHg9IjU4MCIgeT0iMzE0IiB3aWR0aD0iMzQiIGhlaWdodD0iMjAwIi8+PHJlY3QgeD0iNjYwIiB5PSIzMTQiIHdpZHRoPSIzNCIgaGVpZ2h0PSIyMDAiLz4KPHJlY3QgeD0iNzQwIiB5PSIzMTQiIHdpZHRoPSIzNCIgaGVpZ2h0PSIyMDAiLz48cmVjdCB4PSI4MjYiIHk9IjMxNCIgd2lkdGg9IjM0IiBoZWlnaHQ9IjIwMCIvPjxyZWN0IHg9IjkwNiIgeT0iMzE0IiB3aWR0aD0iMzQiIGhlaWdodD0iMjAwIi8+CjxyZWN0IHg9Ijk4NiIgeT0iMzE0IiB3aWR0aD0iMzQiIGhlaWdodD0iMjAwIi8+PHJlY3QgeD0iMTA2NiIgeT0iMzE0IiB3aWR0aD0iMzQiIGhlaWdodD0iMjAwIi8+CjwvZz4KPHJlY3QgeD0iNzUwIiB5PSI0MjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTEwIiBmaWxsPSIjM2IwZDFhIi8+CjxyZWN0IHg9IjQzMCIgeT0iNTE0IiB3aWR0aD0iNzQwIiBoZWlnaHQ9IjE4IiBmaWxsPSIjYjk4YTk0Ii8+CjxyZWN0IHg9IjQxMCIgeT0iNTMyIiB3aWR0aD0iNzgwIiBoZWlnaHQ9IjE4IiBmaWxsPSIjYTU3MjdkIi8+CjwhLS0gbGF3biAtLT4KPHJlY3QgeT0iNTUwIiB3aWR0aD0iMTYwMCIgaGVpZ2h0PSI1MCIgZmlsbD0iIzJmNmI0YSIvPgo8IS0tIHRyZWVzIC0tPgo8Zz48cmVjdCB4PSIyMDUiIHk9IjM4MCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjE3MCIgZmlsbD0iIzRhMmEyYSIvPjxjaXJjbGUgY3g9IjIxNiIgY3k9IjM1MCIgcj0iODUiIGZpbGw9IiMzZjhhNWMiLz48Y2lyY2xlIGN4PSIxNzAiIGN5PSI0MDAiIHI9IjU1IiBmaWxsPSIjMzU3YTUwIi8+PC9nPgo8Zz48cmVjdCB4PSIxMzg1IiB5PSIzOTAiIHdpZHRoPSIyMiIgaGVpZ2h0PSIxNjAiIGZpbGw9IiM0YTJhMmEiLz48Y2lyY2xlIGN4PSIxMzk2IiBjeT0iMzYwIiByPSI4MCIgZmlsbD0iIzNmOGE1YyIvPjxjaXJjbGUgY3g9IjE0NDAiIGN5PSI0MTAiIHI9IjUwIiBmaWxsPSIjMzU3YTUwIi8+PC9nPgo8IS0tIGZsYWdzIC0tPgo8cGF0aCBkPSJNMCA2MCBRNDAwIDE1MCA4MDAgODAgVDE2MDAgNzAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNiMGQxYSIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPgo8cG9seWdvbiBwb2ludHM9IjgwLDg4IDEyMCw5MiA5OCwxMzAiIGZpbGw9IiM4MDAwMjAiLz48cG9seWdvbiBwb2ludHM9IjI0MCwxMTIgMjgwLDExMiAyNjAsMTUwIiBmaWxsPSIjZmZkMTY2Ii8+Cjxwb2x5Z29uIHBvaW50cz0iNDAwLDEyMCA0NDAsMTE2IDQyMCwxNTYiIGZpbGw9IiM4MDAwMjAiLz48cG9seWdvbiBwb2ludHM9IjU2MCwxMTggNjAwLDExMCA1ODAsMTUwIiBmaWxsPSIjZmZkMTY2Ii8+Cjxwb2x5Z29uIHBvaW50cz0iNzIwLDEwMCA3NjAsOTQgNzQwLDEzNiIgZmlsbD0iIzgwMDAyMCIvPjxwb2x5Z29uIHBvaW50cz0iODgwLDg0IDkyMCw4NCA5MDAsMTI0IiBmaWxsPSIjZmZkMTY2Ii8+Cjxwb2x5Z29uIHBvaW50cz0iMTA0MCw4NCAxMDgwLDg4IDEwNjAsMTI4IiBmaWxsPSIjODAwMDIwIi8+PHBvbHlnb24gcG9pbnRzPSIxMjAwLDg4IDEyNDAsODggMTIyMCwxMjgiIGZpbGw9IiNmZmQxNjYiLz4KPHBvbHlnb24gcG9pbnRzPSIxMzYwLDgwIDE0MDAsNzYgMTM4MCwxMTgiIGZpbGw9IiM4MDAwMjAiLz48cG9seWdvbiBwb2ludHM9IjE1MDAsNzQgMTU0MCw3MiAxNTIwLDExMiIgZmlsbD0iI2ZmZDE2NiIvPgo8L2c+Cjwvc3ZnPgo="
+            alt="Illustration of the campus main hall with tall columns, a green lawn, trees and festival flags strung across the sky"
+            width="1600" height="600">
+        <figcaption><span>Career fairs, sports finals, art nights and more. See what's on this term.</span><a
+                href="#events">Browse events</a></figcaption>
+    </figure>
+
+    <main id="main" tabindex="-1">
+        <section id="events" aria-labelledby="events-h">
+            <h2 id="events-h" tabindex="-1">Upcoming events</h2>
+            <form class="toolbar" role="search" aria-label="Filter events" onsubmit="return false" novalidate
+                style="border:2px solid var(--line)">
+                <p style="margin:0">
+                    <label for="search">Search events</label>
+                    <input id="search" type="search" aria-label="Search events by title or keyword"
+                        placeholder="e.g. career, robotics" autocomplete="off">
+                </p>
+                <p style="margin:0">
+                    <label for="category">Category</label>
+                    <select id="category" aria-label="Filter events by category">
+                        <option value="">All categories</option>
+                        <option>Academic</option>
+                        <option>Sports</option>
+                        <option>Arts &amp; Culture</option>
+                        <option>Career</option>
+                        <option>Community</option>
+                    </select>
+                </p>
+            </form>
+            <p id="count" class="meta" role="status" aria-live="polite"></p>
+            <ul id="grid" class="grid"></ul>
+            <p id="empty" class="empty" hidden><strong>No events found.</strong><br>Try a different keyword or choose
+                "All categories".</p>
+        </section>
+
+        <section id="register" aria-labelledby="register-h">
+            <h2 id="register-h" tabindex="-1">Registration form</h2>
+            <div id="confirm" class="confirm" role="status" aria-live="polite" tabindex="-1"></div>
+            <form id="reg" novalidate aria-labelledby="register-h">
+                <fieldset>
+                    <legend>Event</legend>
+                    <div class="field">
+                        <label for="eventName">Selected event <span class="req" aria-hidden="true">*</span></label>
+                        <input id="eventName" name="eventName" type="text" readonly required aria-required="true"
+                            aria-label="Selected event" aria-describedby="eventName-hint eventName-err"
+                            placeholder="Choose an event from the catalog">
+                        <p id="eventName-hint" class="hint">Pick "Register" on an event card to fill this in.</p>
+                        <p id="eventName-err" class="error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your details</legend>
+                    <div class="two">
+                        <div class="field">
+                            <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                            <input id="fullName" name="fullName" type="text" autocomplete="name" required
+                                aria-required="true" aria-label="Full name" aria-describedby="fullName-err">
+                            <p id="fullName-err" class="error" role="alert"></p>
+                        </div>
+                        <div class="field">
+                            <label for="studentId">Student ID <span class="req" aria-hidden="true">*</span></label>
+                            <input id="studentId" name="studentId" type="text" inputmode="numeric" required
+                                aria-required="true" aria-label="Student ID"
+                                aria-describedby="studentId-hint studentId-err" placeholder="2024-01234">
+                            <p id="studentId-hint" class="hint">Format: YYYY-NNNNN (4 digits, hyphen, 5 digits).</p>
+                            <p id="studentId-err" class="error" role="alert"></p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="email">University email <span class="req" aria-hidden="true">*</span></label>
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
+                            aria-label="University email" aria-describedby="email-hint email-err"
+                            placeholder="name@university.edu.ph">
+                        <p id="email-hint" class="hint">Must end in .edu or .edu.ph.</p>
+                        <p id="email-err" class="error" role="alert"></p>
+                    </div>
+                    <div class="two">
+                        <div class="field">
+                            <label for="year">Year level <span class="req" aria-hidden="true">*</span></label>
+                            <select id="year" name="year" required aria-required="true" aria-label="Year level"
+                                aria-describedby="year-err">
+                                <option value="">Select year level</option>
+                                <option>1st year</option>
+                                <option>2nd year</option>
+                                <option>3rd year</option>
+                                <option>4th year</option>
+                                <option>Graduate</option>
+                            </select>
+                            <p id="year-err" class="error" role="alert"></p>
+                        </div>
+                        <div class="field">
+                            <label for="program">Program / course <span class="req" aria-hidden="true">*</span></label>
+                            <input id="program" name="program" type="text" required aria-required="true"
+                                aria-label="Program or course" aria-describedby="program-err"
+                                placeholder="e.g. BS Computer Science">
+                            <p id="program-err" class="error" role="alert"></p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="phone">Contact number (optional)</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel"
+                            aria-label="Contact number, optional" aria-describedby="phone-err"
+                            placeholder="0917 123 4567">
+                        <p id="phone-err" class="error" role="alert"></p>
+                    </div>
+                    <div class="field">
+                        <label for="needs">Dietary / accessibility needs (optional)</label>
+                        <textarea id="needs" name="needs" aria-label="Dietary or accessibility needs, optional"
+                            aria-describedby="needs-hint"></textarea>
+                        <p id="needs-hint" class="hint">Tell us if you need a ramp, interpreter, halal meal, etc.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Consent</legend>
+                    <div class="field">
+                        <div class="check">
+                            <input id="consent" name="consent" type="checkbox" required aria-required="true"
+                                aria-label="I consent to my details being used for event registration"
+                                aria-describedby="consent-err">
+                            <label for="consent">I agree that the organizers may use these details to manage my
+                                registration. <span class="req" aria-hidden="true">*</span></label>
+                        </div>
+                        <p id="consent-err" class="error" role="alert"></p>
+                    </div>
+                </fieldset>
+
+                <div class="actions">
+                    <button type="submit" class="primary" style="margin-top:0">Confirm registration</button>
+                    <button type="button" id="cancel" class="secondary">Cancel and back to events</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="my-registrations" aria-labelledby="mine-h">
+            <h2 id="mine-h">My registrations</h2>
+            <p id="mine-empty" class="meta">You haven't registered for anything yet.</p>
+            <div class="scroll" id="mine-wrap" hidden>
+                <table>
+                    <caption class="hint" style="text-align:left">Registrations made in this session</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Reference</th>
+                            <th scope="col">Event</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Student ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mine"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <p><strong>Office of Student Affairs</strong><br>
+                <a href="mailto:nickocharlzchloeeunice@campus.example.edu">nickocharlzchloeeunice@campus.example.edu</a> · (046) 555-0100
+            </p>
+            <p><small>&copy; 2026 Campus Event Management System (prototype)</small></p>
+        </div>
+    </footer>
+
+    <script>
+        const events = [
+            { id: 1, title: "Career Fair 2026", cat: "Career", start: "2026-10-14T09:00", venue: "University Gymnasium", org: "Career Services Office", seats: 120, desc: "Meet 40+ employers, drop off résumés and join short interviews." },
+            { id: 2, title: "Intro to Robotics Workshop", cat: "Academic", start: "2026-10-16T13:30", venue: "Engineering Lab 2", org: "Robotics Society", seats: 20, desc: "Hands-on session building and programming a line-following robot." },
+            { id: 3, title: "Inter-College Basketball Finals", cat: "Sports", start: "2026-10-21T17:00", venue: "Main Court", org: "Sports Development Unit", seats: 3, desc: "Cheer on your college in the championship game." },
+            { id: 4, title: "Open Mic & Art Night", cat: "Arts & Culture", start: "2026-10-24T18:30", venue: "Student Plaza", org: "Fine Arts Guild", seats: 60, desc: "Poetry, music and a live exhibit from student artists." },
+            { id: 5, title: "Tree Planting Day", cat: "Community", start: "2026-11-02T07:00", venue: "North Campus Grounds", org: "Community Outreach Club", seats: 0, desc: "Help plant 500 saplings around the campus greenbelt." },
+            { id: 6, title: "Research Poster Symposium", cat: "Academic", start: "2026-11-06T10:00", venue: "Library Auditorium", org: "Graduate Studies Office", seats: 45, desc: "Browse student research and vote for the best poster." },
+            { id: 7, title: "Resume & Interview Clinic", cat: "Career", start: "2026-11-10T14:00", venue: "Room 204, Admin Building", org: "Career Services Office", seats: 25, desc: "One-on-one feedback from alumni working in industry." }
+        ];
+        const registrations = [];
+        const colors = { "Academic": ["#800020", "#f5dde2"], "Sports": ["#0b5d3b", "#dff3e8"], "Arts & Culture": ["#7a2467", "#f6e1f1"], "Career": ["#8a4b00", "#fdebd0"], "Community": ["#0b5563", "#dcf1f5"] };
+        const $ = id => document.getElementById(id);
+        const fmt = d => new Date(d).toLocaleString("en-PH", { weekday: "short", month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" });
+        function img(cat, title) {
+            const [a, b] = colors[cat];
+            const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 180'><rect width='320' height='180' fill='${b}'/><circle cx='250' cy='50' r='60' fill='${a}' opacity='.18'/><rect x='30' y='95' width='180' height='14' rx='7' fill='${a}'/><rect x='30' y='120' width='120' height='14' rx='7' fill='${a}' opacity='.6'/><circle cx='52' cy='52' r='20' fill='${a}'/></svg>`;
+            return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+        }
+        let selected = null;
+
+        function render() {
+            const q = $("search").value.trim().toLowerCase(), c = $("category").value;
+            const list = events.filter(e => (!c || e.cat === c) && (!q || (e.title + " " + e.desc + " " + e.org + " " + e.cat).toLowerCase().includes(q)));
+            const grid = $("grid"); grid.innerHTML = "";
+            list.forEach(e => {
+                const full = e.seats <= 0;
+                const li = document.createElement("li");
+                li.innerHTML = `<article aria-labelledby="t${e.id}">
+      <figure><img src="${img(e.cat, e.title)}" alt="Illustration for ${e.title}, a ${e.cat} event" width="320" height="180"><figcaption>${e.cat}</figcaption></figure>
+      <div class="body">
+        <h3 id="t${e.id}">${e.title}${full ? '<span class="badge">Fully booked</span>' : ''}</h3>
+        <p class="meta"><time datetime="${e.start}">${fmt(e.start)}</time></p>
+        <p class="meta">Venue: ${e.venue}</p>
+        <p>${e.desc}</p>
+        <p class="meta">Organizer: ${e.org}</p>
+        <p class="seats ${e.seats > 0 && e.seats <= 5 ? 'low' : ''}">${full ? 'No seats left' : e.seats + ' seats remaining'}${e.seats > 0 && e.seats <= 5 ? ' – filling fast' : ''}</p>
+        <button class="primary" type="button" data-id="${e.id}" ${full ? 'disabled aria-disabled="true"' : ''} aria-label="${full ? e.title + ' is fully booked' : 'Register for ' + e.title}">${full ? 'Fully booked' : 'Register'}</button>
+      </div></article>`;
+                grid.appendChild(li);
+            });
+            $("empty").hidden = list.length > 0;
+            $("count").textContent = list.length ? `Showing ${list.length} of ${events.length} events.` : "No events match your search.";
+        }
+
+        function showErr(id, msg) {
+            const f = $(id), e = $(id + "-err");
+            if (e) e.textContent = msg ? "⚠ " + msg : "";
+            if (f) { if (msg) f.setAttribute("aria-invalid", "true"); else f.removeAttribute("aria-invalid"); }
+            return !msg;
+        }
+        function validate() {
+            const v = id => $(id).value.trim(); let first = null; const bad = (id, m) => { showErr(id, m); if (!first) first = id; };
+            const ok = (id) => showErr(id, "");
+            selected ? ok("eventName") : bad("eventName", "Choose an event from the catalog first.");
+            v("fullName").length >= 2 ? ok("fullName") : bad("fullName", "Enter your full name.");
+            if (!v("studentId")) bad("studentId", "Enter your student ID."); else if (!/^\d{4}-\d{5}$/.test(v("studentId"))) bad("studentId", "Student ID must look like 2024-01234."); else ok("studentId");
+            if (!v("email")) bad("email", "Enter your university email."); else if (!/^[^\s@]+@[^\s@]+\.edu(\.[a-z]{2})?$/i.test(v("email"))) bad("email", "Enter a valid university email ending in .edu or .edu.ph."); else ok("email");
+            $("year").value ? ok("year") : bad("year", "Select your year level.");
+            v("program") ? ok("program") : bad("program", "Enter your program or course.");
+            if (v("phone") && !/^[+\d][\d\s-]{6,14}$/.test(v("phone"))) bad("phone", "Contact number may only contain digits, spaces and hyphens."); else ok("phone");
+            $("consent").checked ? ok("consent") : bad("consent", "You must agree before registering.");
+            if (first) $(first).focus();
+            return !first;
+        }
+
+        $("grid").addEventListener("click", e => {
+            const b = e.target.closest("button[data-id]"); if (!b || b.disabled) return;
+            selected = events.find(x => x.id == b.dataset.id);
+            $("eventName").value = selected.title; showErr("eventName", "");
+            $("confirm").textContent = "";
+            $("register").scrollIntoView(); $("fullName").focus();
+        });
+        $("search").addEventListener("input", render);
+        $("category").addEventListener("change", render);
+
+        $("reg").addEventListener("submit", e => {
+            e.preventDefault();
+            if (!validate()) return;
+            if (selected.seats <= 0) { showErr("eventName", "Sorry, this event just filled up. Choose another."); return; }
+            const ref = "EVT-" + selected.id.toString().padStart(2, "0") + "-" + Math.random().toString(36).slice(2, 8).toUpperCase();
+            registrations.push({ ref, eventId: selected.id, event: selected.title, name: $("fullName").value.trim(), studentId: $("studentId").value.trim(), email: $("email").value.trim(), year: $("year").value, program: $("program").value.trim(), phone: $("phone").value.trim(), needs: $("needs").value.trim(), at: new Date().toISOString() });
+            selected.seats--;
+            const c = $("confirm");
+            c.innerHTML = `<strong>You're registered for ${selected.title}.</strong><br>Your reference number is <strong>${ref}</strong>. Keep it for check-in.`;
+            $("reg").reset(); const title = selected.title; selected = null;
+            ["eventName", "fullName", "studentId", "email", "year", "program", "phone", "consent"].forEach(id => showErr(id, ""));
+            render(); renderMine();
+            c.focus(); c.scrollIntoView();
+        });
+        $("cancel").addEventListener("click", () => {
+            $("reg").reset(); selected = null; $("confirm").textContent = "";
+            ["eventName", "fullName", "studentId", "email", "year", "program", "phone", "consent"].forEach(id => showErr(id, ""));
+            $("events").scrollIntoView(); $("events-h").focus();
+        });
+        function renderMine() {
+            $("mine-empty").hidden = registrations.length > 0; $("mine-wrap").hidden = !registrations.length;
+            $("mine").innerHTML = registrations.map(r => `<tr><td>${r.ref}</td><td>${r.event}</td><td>${r.name}</td><td>${r.studentId}</td></tr>`).join("");
+        }
+        render(); renderMine();
+    </script>
+</body>
+
+</html>
