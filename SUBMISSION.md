@@ -1,79 +1,104 @@
 ## Task 1: Requirements Analysis & Prompt Architecture
 
-### Prompt
+### 1. Production-Grade RCTC Prompt
 
+```text
 [ROLE]
-You are a Lead Systems Architect specializing in lightweight, modern full-stack web applications for academic and enterprise environments.
+You are a Lead Systems Architect designing lightweight, secure web applications for academic institutions.
 
 [CONTEXT]
-A team of 4th-year BSIT students is developing a working prototype for an Online Campus Event Management System during a 3-hour laboratory examination. The system must enable students to view upcoming campus events, register for events, and allow administrators to review registered attendees.
+A team of fourth-year BSIT students has built a prototype Online Campus Event Management System within a three-hour laboratory examination. The project contains a static vanilla HTML/CSS/JavaScript frontend, an Express.js and Node.js backend, and a PostgreSQL relational database. Students must browse upcoming events, search and filter the catalog, submit registrations with validated student details and consent, and view registrations created during the current browser session. The backend must calculate available seats, prevent duplicate registrations, enforce event capacity and registration deadlines, and provide an administrator endpoint for viewing attendees.
 
 [TASK]
-Provide an overall system architecture and design overview for the Online Campus Event Management System. Your design should outline:
-
-High-level architecture and system layers (Presentation, API/Logic, Persistence).
-
-Core system modules and data flow for Event Browsing, Registration, and Admin Management.
-
-Recommended technology choices suitable for rapid prototyping within 3 hours.
+Produce an overall system design for this prototype. Describe the presentation, API/business-logic, and persistence layers; frontend modules and data flow; backend API endpoints; database entities, relationships, constraints, indexes, and transaction rules; and security, accessibility, and concurrency considerations.
 
 [CONSTRAINTS]
+- Use the existing stack: vanilla HTML/CSS/JavaScript, Node.js, Express.js, PostgreSQL, and native fetch.
+- Do not replace the frontend with React, Tailwind, or another framework.
+- Do not use Redux, Zustand, MobX, or any third-party global state-management library.
+- Do not introduce microservices, queues, serverless functions, or other enterprise infrastructure.
+- Use parameterized SQL queries and server-side validation; never expose database credentials in client-side code or documentation.
+- Treat frontend validation as user feedback only; the backend and database must enforce registration rules.
+- Keep the design realistic and implementable by a four-person team within three hours.
+```
 
-DO NOT use third-party global state management libraries (e.g., Redux, Zustand, MobX); stick to native React state/context or lightweight vanilla JS.
+### 2. AI Output
 
-DO NOT include microservices, distributed queues, serverless functions, or complex enterprise message brokers; the solution must be a single monolithic/modular prototype.
+#### System Design: Online Campus Event Management System
 
-Keep the architectural blueprint realistic, clear, and fully executable within a 3-hour team development timeframe.
+The system is a small monolithic web application with three layers:
 
----
+```text
+[ Vanilla HTML/CSS/JavaScript frontend ]
+                    |
+              Native fetch API
+                    |
+[ Express.js REST API and validation logic ]
+                    |
+[ PostgreSQL database with constraints and triggers ]
+```
 
-### Output
+The presentation layer serves static files from `frontend`. It renders event cards, search and category filtering, the registration form, validation messages, confirmation feedback, and a current-session registration table. The API layer is an Express.js server exposing `GET /api/events`, `POST /api/registrations`, and `GET /api/admin/events/:id/registrations`. The persistence layer is PostgreSQL, protected by parameterized queries, foreign keys, unique constraints, check constraints, indexes, and triggers.
 
-#### System Architecture Overview: Online Campus Event Management System
+The event catalog loads upcoming events with category, schedule, venue, organizer, description, and calculated remaining seats. The registration form validates the selected event, full name, `YYYY-NNNNN` student ID, `.edu` or `.edu.ph` email, year level, program, optional phone number, and required consent. On submission, the frontend sends the event ID and student details to the API, displays the returned reference or an error, and refreshes the event list. Session registration summaries are kept in browser memory, while successful API submissions persist in PostgreSQL. The admin endpoint joins users and registrations to provide attendee details, but requires authentication and authorization before production use.
 
-##### 1. High-Level Architecture & System Layers
+The database contains `event_categories`, `users`, `events`, and `registrations`. Categories classify events; users make registrations; and events receive registrations. The schema enforces valid student numbers, email addresses, year levels, phone numbers, roles, event schedules, and capacities. A unique `(user_id, event_id)` constraint prevents duplicate registration. A registration trigger locks the event row, checks publication status and registration deadline, counts current registrations, and rejects attempts to exceed capacity. A second trigger prevents capacity from being reduced below existing registrations.
 
-To achieve rapid prototyping within a strict 3-hour laboratory timeframe, the system utilizes a **Monolithic Single-Page Application (SPA) with a Modular RESTful Backend Layer**.
+Security and quality safeguards include environment-only database credentials, parameterized SQL, server-side validation, escaped dynamic HTML or DOM `textContent` for user-controlled values, semantic labels and fieldsets, keyboard focus handling, live status messages, and a skip link. Transactions and row locking prevent concurrent registrations from oversubscribing an event. Administrator authentication and production secret rotation remain required before deployment.
 
-[ Presentation Layer ]  -->  [ API / Business Logic Layer ]  -->  [ Persistence Layer ]
-React + Tailwind CSS         Express.js / Node.js Router        PostgreSQL / MySQL
-(Native State / Context)     (REST Controller & Validation)     (Direct SQL / Knex)
+### 3. Manual Grounding Evaluation
 
-* **Presentation Layer (Client):** Built as a React SPA using Vite for fast module updates and structured with native React state (`useState`, `useContext`) and Tailwind CSS for rapid component layout without external state libraries.
-* **API / Business Logic Layer (Server):** Node.js runtime running an Express.js web server. Handles input validation (such as email domain checks and seat quota verification) and routes requests through direct REST endpoint controllers.
-* **Persistence Layer (Database):** A relational database (PostgreSQL or MySQL) structured in 3rd Normal Form (3NF), accessed via direct parameterized SQL queries to maintain execution safety without heavy ORM overhead.
-
-##### 2. Core Modules & System Data Flow
-
-* **Event Browsing Module:**
-  1. Student requests the event catalog via client interface.
-  2. Frontend sends an HTTP `GET /api/events` request.
-  3. API queries active events alongside real-time calculated seat availability (`capacity - count(registrations)`).
-  4. Client receives JSON payload and dynamically renders accessible event cards.
-
-* **Event Registration Module:**
-  1. Student fills out and submits the event registration form with their institutional email (`@univ.edu.ph`).
-  2. Server performs verification: validates the email domain format, checks for duplicate registrations, and verifies that `remaining_seats > 0`.
-  3. Upon passing validation, the API executes an `INSERT INTO registrations` query and returns an HTTP `201 Created` status to the client.
-
-* **Admin Management Module:**
-  1. Admin selects a specific event to view attendees.
-  2. Frontend issues an HTTP `GET /api/events/:id/attendees` request.
-  3. API queries and joins records between `registrations` and `users` filtered by the requested event ID.
-  4. Response is displayed on the admin dashboard in an accessible tabular format.
-
-##### 3. Recommended Technology Stack for Rapid Prototyping (3-Hour Window)
-
-| Component | Technology | Rationale for 3-Hour Limit |
-| :--- | :--- | :--- |
-| **Frontend Framework** | React + Vite | Fast setup, hot-reloading, and built-in native state management capability. |
-| **Styling** | Tailwind CSS | Utility classes allow rapid UI layout and responsive design without writing custom CSS. |
-| **Backend Runtime** | Node.js + Express.js | Lightweight server structure with minimal boilerplate and unified JavaScript ecosystem. |
-| **Database** | SQLite / PostgreSQL | Simple setup and reliable relational structure for `users`, `events`, and `registrations`. |
-| **HTTP Client** | Native `fetch` API | Zero-dependency HTTP communication for standard REST calls. |
+The generated design is realistic for a three-hour prototype because it matches the implemented vanilla HTML/CSS/JavaScript frontend, Express.js API, PostgreSQL schema, and native `fetch` approach instead of introducing an unimplemented framework. It correctly assigns seat availability, duplicate-registration prevention, deadlines, consent, and concurrency protection to the backend and database rather than relying only on browser checks. The design is achievable for a four-person team because the modules and three API endpoints are small, while database constraints and triggers provide important safeguards without additional infrastructure. Administrator authentication and production secret management remain necessary follow-up work before deployment beyond the prototype.
 
 ---
 
-### Manual Grounding Evaluation
+## Task 5: Group Integration & Verification Report
 
-The AI-generated architecture provides a highly realistic, grounded, and achievable design for a 3-hour laboratory timeframe. By explicitly scoping the system to a single monolithic SPA using React, Express, and standard SQL queries, the blueprint completely avoids over-engineering pitfalls like microservices or complex global state configurations. The proposed three-layer modular structure clearly separates team responsibilities across frontend, API logic, and database tasks, enabling seamless concurrent development among group members. Furthermore, using lightweight tools like Vite and Tailwind CSS ensures the group can execute a complete working prototype well within the 180-minute limit
+### 1. Team Roster
+
+| Group member               | Assigned role                               |
+|----------------------------|---------------------------------------------|
+| Dela Cruz                  | Systems Architect & Prompt Leader           |
+| Layug                      | QA & Security Engineer                      |
+| Magpale, Precious Chloe L. | Frontend Engineer                           |
+| Revillas                   | Database & Backend Engineer                 |
+
+### 2. Setup Instructions
+
+1. Ensure Node.js and PostgreSQL are installed.
+2. From the directory containing `server.js`, install the backend dependencies with `npm install`.
+3. Create a local environment file named `.env` and set `DATABASE_URL` to the PostgreSQL connection string. Do not commit this file or include its credentials in the submission.
+4. Apply the PostgreSQL schema from `database/schema.sql` to the configured database.
+5. Start the application with `node server.js`.
+6. Open `http://localhost:3000` in a browser to view the event catalog and registration form.
+
+The frontend can also be inspected directly from `frontend/index.html`, but API-backed event loading and registration require the Express server and database connection.
+
+### 3. AI Disclosure Statement
+
+The team used GitHub Copilot and an AI assistant to help draft the initial system architecture, frontend structure, validation logic, database design, and documentation. All generated output was manually reviewed against the actual project files, tested through the registration and event-browsing flows, and revised by team members. The team retained only code and documentation that matched the implemented vanilla JavaScript, Express.js, PostgreSQL, and accessibility requirements.
+
+### 4. Group Verification Log
+
+| # 
+| AI-generated output or issue 
+| Manual correction or refinement 
+| Reason and Member Responsible 
+
+| 2 |
+| Unsafe dynamic HTML rendering used interpolated event and registration values in `innerHTML`. 
+| Replaced untrusted value interpolation with `createElement()` and `textContent` where appropriate, and added escaping for values that remain in trusted templates. 
+| Prevents cross-site scripting when event or registration data contains HTML or JavaScript. 
+| Magpale
+
+| 2 |
+| The initial frontend treated local event data, seat counts, and random reference numbers as authoritative and could appear to complete a registration without the server. 
+| Refined the frontend to load events through `GET /api/events` and submit registrations through `POST /api/registrations`, then display the server response and refresh event data. 
+| Prevents fake or stale registrations and makes the database the source of truth. 
+| Magpale
+
+| 3 |          
+| A basic registration design could rely only on client-side checks for duplicate registrations, event deadlines, and seat capacity. 
+| Added database unique constraints, server-side parameterized queries, a transaction, row locking, and PostgreSQL triggers that reject duplicate, closed, unpublished, or over-capacity registrations. 
+| Protects business rules from modified requests and concurrent submissions. 
+| Revillas. 

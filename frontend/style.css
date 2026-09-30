@@ -135,6 +135,10 @@ section {
     margin-block: 1rem
 }
 
+.toolbar > p {
+    margin: 0
+}
+
 label {
     display: block;
     font-weight: 600;
@@ -266,6 +270,11 @@ button {
     background: #f7e4e8
 }
 
+.registration-cancel {
+    padding: .35rem .65rem;
+    white-space: nowrap
+}
+
 button:disabled {
     background: #e3e6ed;
     color: #4a5165;
@@ -349,6 +358,10 @@ legend {
     gap: .75rem
 }
 
+.actions .primary {
+    margin-top: 0
+}
+
 .confirm {
     background: var(--ok-bg);
     border: 2px solid var(--ok);
@@ -366,6 +379,10 @@ table {
     width: 100%;
     border-collapse: collapse;
     background: var(--card)
+}
+
+.registrations-caption {
+    text-align: left
 }
 
 th,
